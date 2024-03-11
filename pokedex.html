@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="fonts.css">
+    <title>Document</title>
+    <script src="pokedex.js"></script>
+</head>
+<body onload="loadPokemon()">
+    <div id="pokedexBgr">
+        <header>
+            <img src="" alt="Back">
+            <h1>Pokedex</h1>
+            <img src="" alt="SerachBtn">            
+        </header>
+        <div class="info-container-top">
+            <div class="pokemon-name-and-types-div">
+                <span id="pokemonName">Name</span>
+                <div class="pokemon-types-div">
+                    <span id="pokemonType1"></span>
+                    <span class="d-none" id="pokemonType2"></span>
+                </div>
+            </div>
+            <div class="pokemon-id-div"> 
+                <p id="pokemonId"></p>
+            </div>
+        </div>
+    </div>
+    <div class="info-container-bottom">
+        <div class="pokemon-img-div">
+        <img id="pokemonImg" src="" alt="">
+        </div>
+    </div>
+    
+</body>
+</html>
