@@ -17,7 +17,7 @@
         </header>
         <div class="info-container-top">
             <div class="pokemon-name-and-types-div">
-                <span id="pokemonName">Name</span>
+                <p id="pokemonName">Name</p>
                 <div class="pokemon-types-div">
                     <span id="pokemonType1"></span>
                     <span class="d-none" id="pokemonType2"></span>
@@ -25,12 +25,55 @@
             </div>
             <div class="pokemon-id-div"> 
                 <p id="pokemonId"></p>
+                <p id="pokemonSpecies"></p>
             </div>
         </div>
     </div>
     <div class="info-container-bottom">
         <div class="pokemon-img-div">
         <img id="pokemonImg" src="" alt="">
+        </div>
+        <nav class="info-nav">
+            <p id="pokemonAbout" onclick="pokemonAbout()"><b>About</b></p>
+            <p id="pokemonBaseStats" onclick="pokemonBaseStats()"><b>Base Stats</b></p>
+            <p id="pokemonEvolution" onclick="pokemonEvolution()"><b>Evolution</b></p>
+            <p id="pokemonMoves" onclick="pokemonMoves()"><b>Moves</b></p>
+        </nav>
+        <div class="about-div">
+            <span id="pokemonDescription">
+
+            </span>
+            <div class="pokemone-height-and-weight-div">
+                <span class="pokemon-height">
+                    <p>Height</p>
+                    <p id="pokemonHeight"></p>
+                </span>
+                <span class="pokemone-weight">
+                    <p>Weight</p>
+                    <p id="pokemoneWeight"></p>
+                </span>
+            </div>
+            <p><b>Breeding</b></p>
+            <div class="pokemon-gendar-div">    <!-- myb noch ändern -->
+                <p>Gendar</p>
+                <img src="" alt="">
+                <p></p>
+                <img src="" alt="">
+                <p></p>
+            </div>                              <!-- myb noch ändern -->
+            <span>
+                <p>Egg Groups</p>
+                <p id="pokemonEggGroups"></p>
+            </span>
+        </div>
+        <div class="base-stats-div d-none">
+
+        </div>
+        <div class="evolution-div d-none">
+
+        </div>
+        <div class="moves-div d-none">
+
         </div>
     </div>
     
