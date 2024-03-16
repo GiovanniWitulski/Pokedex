@@ -34,37 +34,45 @@
         <img id="pokemonImg" src="" alt="">
         </div>
         <nav class="info-nav">
-            <p id="pokemonAbout" onclick="pokemonAbout()"><b>About</b></p>
-            <p id="pokemonBaseStats" onclick="pokemonBaseStats()"><b>Base Stats</b></p>
-            <p id="pokemonEvolution" onclick="pokemonEvolution()"><b>Evolution</b></p>
-            <p id="pokemonMoves" onclick="pokemonMoves()"><b>Moves</b></p>
+            <button class="info-nav-btn darkgray" onfocus="pokemonAbout()" type="button" autofokus id="pokemonAboutBtn"><b>About</b></button>
+            <button class="info-nav-btn darkgray" onfocus="pokemonBaseStats()"><b>Base Stats</b></button>
+            <button class="info-nav-btn darkgray" onfocus="pokemonEvolution()"><b>Evolution</b></button>
+            <button class="info-nav-btn darkgray" onfocus="pokemonMoves()"><b>Moves</b></button>
         </nav>
         <div class="about-div">
-            <span id="pokemonDescription">
+            <span class="pokemon-description-span">
+                <span id="pokemonDescription">
 
+                </span>
             </span>
             <div class="pokemone-height-and-weight-div">
-                <span class="pokemon-height">
-                    <p>Height</p>
+                <span class="pokemon-height-span">
+                    <p class="pokemon-height darkgray">Height</p>
                     <p id="pokemonHeight"></p>
                 </span>
-                <span class="pokemone-weight">
-                    <p>Weight</p>
+                <span class="pokemon-weight-span">
+                    <p class="pokemon-weight darkgray">Weight</p>
                     <p id="pokemoneWeight"></p>
                 </span>
             </div>
-            <p><b>Breeding</b></p>
-            <div class="pokemon-gendar-div">    <!-- myb noch ändern -->
-                <p>Gendar</p>
-                <img src="" alt="">
-                <p></p>
-                <img src="" alt="">
-                <p></p>
-            </div>                              <!-- myb noch ändern -->
-            <span>
-                <p>Egg Groups</p>
-                <p id="pokemonEggGroups"></p>
-            </span>
+            <div class="abilities-div">
+                <p><b>Abilities</b></p>
+                <span class="abilities-span">
+                    <p class="darkgray pokemon-abilities-p">Signature Abilities</p>
+                    <p id="pokemonAbilities"></p>
+                </span>
+            </div>
+            <div class="breeding-div">
+                <p class="breeding"><b>Breeding</b></p>
+                <span class="egg-groups-span">
+                    <p class="darkgray egg-groups-p">Egg Groups</p>
+                    <p id="pokemonEggGroups"></p>
+                </span>
+                <span class="hatch-counter-span">
+                    <p class="darkgray hatch-counter-p">Hatch Counter</p>
+                    <p id="pokemonHatchCounter"></p>
+                </span>
+            </div>
         </div>
         <div class="base-stats-div d-none">
 

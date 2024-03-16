@@ -7,6 +7,10 @@ body {
     display: none;
 }
 
+.darkgray {
+    color: #b6b6b6;
+}
+
 p {
     margin: 0;
 }
@@ -66,6 +70,18 @@ h1 {
     border-radius: 20px;
 }
 
+#pokemonType2 {
+    border: 1px solid rgb(255 128 128);
+    background-color: rgb(255 128 128);
+    box-shadow: 0px 0px 8px -6px black;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 25px;
+    padding-left: 25px;
+    border-radius: 20px;
+    margin-left: 3px;
+}
+
 .pokemon-id-div {
     height: auto;
     display: flex;
@@ -105,4 +121,110 @@ h1 {
     justify-content: space-between;
     width: 60%;
     margin-top: 12px;
+}
+
+.info-nav-btn {
+    background-color: unset;
+    border: unset;
+    font-size: medium;
+    padding: unset;
+}
+
+.info-nav-btn:hover {
+    cursor: pointer;
+    color: rgb(142, 142, 142);
+    text-decoration: underline rgb(142, 142, 142);
+    text-underline-offset: 5px;
+}
+
+.info-nav-btn:focus {
+    color: black;
+    text-decoration: underline rgb(255 128 128) 2px;
+    text-underline-offset: 5px;
+}
+
+.about-div {
+    width: 60%;
+}
+
+.pokemon-description-span {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#pokemonDescription {
+
+}
+
+.pokemone-height-and-weight-div {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 14px;
+    padding-right: 14px;
+    box-shadow: 0px 0px 12px -6px black;
+}
+
+.pokemon-height-span {
+    width: 50%;
+}
+
+.pokemon-height {
+
+}
+
+.pokemon-weight-span {
+    width: 50%;
+}
+
+.pokemon-weight {
+    
+}
+
+.abilities-div {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.abilities-span {
+    display: flex;
+    margin-top: 10px;
+}
+
+.pokemon-abilities-p {
+    width: 50%;
+}
+
+.breeding-div {
+    margin-top: 20px;
+}
+
+.breeding {
+    margin-bottom: 10px;
+}
+
+.egg-groups-span {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.egg-groups-p {
+    width: 50%;
+}
+
+#pokemonEggGroups {
+    width: 25%;
+}
+
+.hatch-counter-span {
+    display: flex;
+}
+
+.hatch-counter-p {
+    width: 50%;
 }
