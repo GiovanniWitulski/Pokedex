@@ -116,6 +116,12 @@ h1 {
     justify-content: center;
 }
 
+.pokemon-about-btn {
+    color: black;
+    text-decoration: underline rgb(255 128 128) 2px;
+    text-underline-offset: 5px;
+}
+
 .info-nav {
     display: flex;
     justify-content: space-between;
@@ -138,6 +144,12 @@ h1 {
 }
 
 .info-nav-btn:focus {
+    color: black;
+    text-decoration: underline rgb(255 128 128) 2px;
+    text-underline-offset: 5px;
+}
+
+.clicked-info-nav-btn {
     color: black;
     text-decoration: underline rgb(255 128 128) 2px;
     text-underline-offset: 5px;

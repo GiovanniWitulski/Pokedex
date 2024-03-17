@@ -92,3 +92,28 @@ function eggGroupsAndHatchCounter() {
 
     document.getElementById('pokemonHatchCounter').innerHTML = currentPokemonSpecies['hatch_counter'] + ` steps`;
 }
+
+function pokemonInfoNav(buttonId) {
+    let buttons = document.querySelectorAll('.info-nav-btn');
+    buttons.forEach(function(button, index) {
+        if (button.id === buttonId) {
+            button.classList.add('clicked-info-nav-btn');
+            selectSection(index);
+        } else {
+            button.classList.remove('clicked-info-nav-btn');
+        }
+    });
+    document.getElementById('pokemonAboutBtn').classList.remove('pokemon-about-btn');
+}
+
+function selectSection(buttonIndex) {
+    let sections = document.querySelectorAll('.info-container-bottom section');
+
+    sections.forEach(function(section, index) {
+    if (index === buttonIndex) {
+            section.classList.remove('d-none');
+        } else {
+            section.classList.add('d-none');
+        }
+    });
+}

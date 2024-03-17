@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="fonts.css">
     <title>Document</title>
+    <script src="script.js"></script>
     <script src="pokedex.js"></script>
 </head>
 <body onload="loadPokemon()">
@@ -34,12 +35,13 @@
         <img id="pokemonImg" src="" alt="">
         </div>
         <nav class="info-nav">
-            <button class="info-nav-btn darkgray" onfocus="pokemonAbout()" type="button" autofokus id="pokemonAboutBtn"><b>About</b></button>
-            <button class="info-nav-btn darkgray" onfocus="pokemonBaseStats()"><b>Base Stats</b></button>
-            <button class="info-nav-btn darkgray" onfocus="pokemonEvolution()"><b>Evolution</b></button>
-            <button class="info-nav-btn darkgray" onfocus="pokemonMoves()"><b>Moves</b></button>
+            <button class="info-nav-btn darkgray pokemon-about-btn" onfocus="pokemonInfoNav('pokemonAboutBtn')" id="pokemonAboutBtn"><b>About</b></button>
+            <button class="info-nav-btn darkgray" onclick="pokemonInfoNav('baseStatsBtn')" id="baseStatsBtn"><b>Base Stats</b></button>
+            <button class="info-nav-btn darkgray" onclick="pokemonInfoNav('evolutionBtn')" id="evolutionBtn"><b>Evolution</b></button>
+            <button class="info-nav-btn darkgray" onclick="pokemonInfoNav('movesBtn')" id="movesBtn"><b>Moves</b></button>
         </nav>
-        <div class="about-div">
+        
+        <section class="about-div">
             <span class="pokemon-description-span">
                 <span id="pokemonDescription">
 
@@ -73,16 +75,19 @@
                     <p id="pokemonHatchCounter"></p>
                 </span>
             </div>
-        </div>
-        <div class="base-stats-div d-none">
+        </section>
 
-        </div>
-        <div class="evolution-div d-none">
+        <section class="base-stats-div d-none">
 
-        </div>
-        <div class="moves-div d-none">
+        </section>
+        <section class="evolution-div d-none">
 
-        </div>
+        </section>
+
+        <section class="moves-div d-none">
+
+        </section>
+
     </div>
     
 </body>
