@@ -127,6 +127,7 @@ h1 {
     justify-content: space-between;
     width: 60%;
     margin-top: 12px;
+    border-bottom: 1px solid lightgray;
 }
 
 .info-nav-btn {
@@ -239,4 +240,38 @@ h1 {
 
 .hatch-counter-p {
     width: 50%;
+}
+
+.base-stats-section {
+    width: 60%;
+}
+
+.base-stats-div {
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.base-stat-container-left {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.base-stat-container-right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.base-stat-span {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-base-stat-span {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
 }

@@ -30,9 +30,15 @@ function renderPokemon() {
     eggGroupsAndHatchCounter();
     signatureAbilities();
     let baseStats = currentPokemon['stats']; //load base stats
+    let baseStatIds = ['baseHp', 'baseAtk', 'baseDef', 'baseSpeed', 'baseSpAtk', 'baseSpDef'];
+    let totalBaseStats = 0;
     for (let i = 0; i < baseStats.length; i++) {
-        const baseStat = baseStats[i];
-    } 
+        const baseStat = baseStats[i]['base_stat'];
+        const baseStatId = baseStatIds[i];
+        totalBaseStats += baseStat;
+        document.getElementById(baseStatId).innerHTML = baseStat; 
+    }
+    document.getElementById('totalBaseStats').innerHTML = totalBaseStats;
 }
 
 function nameAndImg() {
