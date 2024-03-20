@@ -1,8 +1,12 @@
 let currentPokemon;
 let currentPokemonSpecies;
+let currentEvolutionChain;
 
-function init() {
-
+async function init() {
+    await loadPokemon();
+    await loadPokemonSpecies();
+    await loadPokemonEvolutionChain();
+    renderPokemon();
 }
 
 async function loadPokemon() {
@@ -10,35 +14,49 @@ async function loadPokemon() {
     let response = await fetch(url);
     currentPokemon = await response.json();
     console.log('loadet pokemon', currentPokemon);
-    await loadPokemonSpecies();
-    renderPokemon();
 }
 
 async function loadPokemonSpecies() {
-    let url = 'https://pokeapi.co/api/v2/pokemon-species/4/';
+    let url = 'https://pokeapi.co/api/v2/pokemon-species/4';
     let response = await fetch(url);
     currentPokemonSpecies = await response.json();
     console.log('loadet pokemon species', currentPokemonSpecies);
+}
+
+async function loadPokemonEvolutionChain() {
+    let url = currentPokemonSpecies['evolution_chain']['url'];
+    let response = await fetch(url);
+    currentEvolutionChain = await response.json();
+    console.log('loadet pokemon evolution chain' , currentEvolutionChain);
 }
 
 function renderPokemon() {
     nameAndImg();
     types();
     idAndSpecies();
-    heightAndWeight();
+    pokedexBgrColor();
+    renderPokemonAboutContainer();
+}
+
+function renderPokemonAboutContainer() {
     description();
-    eggGroupsAndHatchCounter();
+    heightAndWeight();
     signatureAbilities();
-    let baseStats = currentPokemon['stats']; //load base stats
-    let baseStatIds = ['baseHp', 'baseAtk', 'baseDef', 'baseSpeed', 'baseSpAtk', 'baseSpDef'];
-    let totalBaseStats = 0;
-    for (let i = 0; i < baseStats.length; i++) {
-        const baseStat = baseStats[i]['base_stat'];
-        const baseStatId = baseStatIds[i];
-        totalBaseStats += baseStat;
-        document.getElementById(baseStatId).innerHTML = baseStat; 
-    }
-    document.getElementById('totalBaseStats').innerHTML = totalBaseStats;
+    eggGroupsAndHatchCounter();
+
+    evolutionChain();
+}
+
+function renderPokemonBaseStatsContainer() {
+    beseStats();
+}
+
+function renderPokemonEvolutionChainContainer() {
+    evolutionChain();
+}
+
+function renderPokemonMovesContainer() {
+
 }
 
 function nameAndImg() {
@@ -72,7 +90,7 @@ function description() {
 }
 
 function heightAndWeight() {
-    let formattedWeight = (currentPokemon['weight'] / 10).toFixed(2);
+    let formattedWeight = (currentPokemon['weight'] / 10).toFixed(1);
     document.getElementById('pokemoneWeight').innerHTML = formattedWeight + ' kg';  
     
     let formattedHeight = (currentPokemon['height'] / 10).toFixed(2);
@@ -97,6 +115,31 @@ function eggGroupsAndHatchCounter() {
     }
 
     document.getElementById('pokemonHatchCounter').innerHTML = currentPokemonSpecies['hatch_counter'] + ` steps`;
+}
+
+function beseStats() {
+    let baseStats = currentPokemon['stats']; //load base stats
+    let baseStatIds = ['baseHp', 'baseAtk', 'baseDef', 'baseSpeed', 'baseSpAtk', 'baseSpDef'];
+    let totalBaseStats = 0;
+    for (let i = 0; i < baseStats.length; i++) {
+        const baseStat = baseStats[i]['base_stat'];
+        const baseStatId = baseStatIds[i];
+        totalBaseStats += baseStat;
+        document.getElementById(baseStatId).innerHTML = baseStat; 
+    }
+    document.getElementById('totalBaseStats').innerHTML = totalBaseStats;
+}
+
+function evolutionChain() {
+    let pokemonNameStage1 = currentEvolutionChain['chain']['species']['name'];
+    let pokemonNameStage2 = currentEvolutionChain['chain']['evolves_to'][0]['species']['name'];
+    let pokemonNameStage3 = currentEvolutionChain['chain']['evolves_to'][0]['evolves_to'][0]['species']['name'];
+
+    let pokemonLvlforStage2 = currentEvolutionChain['chain']['evolves_to'][0]['evolution_details'][0]['min_level'];
+    let pokemonLvlforStage3 = currentEvolutionChain['chain']['evolves_to'][0]['evolves_to'][0]['evolution_details'][0]['min_level'];
+    console.log(pokemonNameStage1,pokemonNameStage2,pokemonNameStage3);
+    console.log('stage 2 at lvl ' + pokemonLvlforStage2)
+    console.log('stage 3 at lvl ' + pokemonLvlforStage3)
 }
 
 function pokemonInfoNav(buttonId) {

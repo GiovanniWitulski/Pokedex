@@ -8,13 +8,14 @@
     <title>Document</title>
     <script src="script.js"></script>
     <script src="pokedex.js"></script>
+    <script src="colors.js"></script>
 </head>
-<body onload="loadPokemon()">
+<body onload="init()">
     <div id="pokedexBgr">
         <header>
-            <img src="" alt="Back">
+            <img class="icon" src="img/arrow-left-white.svg" alt="Back">
             <h1>Pokedex</h1>
-            <img src="" alt="SerachBtn">            
+            <img class="icon" src="img/magnifying-glass-white.svg" alt="SerachBtn">            
         </header>
         <div class="info-container-top">
             <div class="pokemon-name-and-types-div">
@@ -35,10 +36,10 @@
         <img id="pokemonImg" src="" alt="">
         </div>
         <nav class="info-nav">
-            <button class="info-nav-btn darkgray pokemon-about-btn" onfocus="pokemonInfoNav('pokemonAboutBtn')" id="pokemonAboutBtn"><b>About</b></button>
-            <button class="info-nav-btn darkgray" onclick="pokemonInfoNav('baseStatsBtn')" id="baseStatsBtn"><b>Base Stats</b></button>
-            <button class="info-nav-btn darkgray" onclick="pokemonInfoNav('evolutionBtn')" id="evolutionBtn"><b>Evolution</b></button>
-            <button class="info-nav-btn darkgray" onclick="pokemonInfoNav('movesBtn')" id="movesBtn"><b>Moves</b></button>
+            <button class="info-nav-btn darkgray pokemon-about-btn" onfocus="pokemonInfoNav('pokemonAboutBtn'); renderPokemonAboutContainer()" id="pokemonAboutBtn"><b>About</b></button>
+            <button class="info-nav-btn darkgray" onclick="pokemonInfoNav('baseStatsBtn'); renderPokemonBaseStatsContainer()" id="baseStatsBtn"><b>Base Stats</b></button>
+            <button class="info-nav-btn darkgray" onclick="pokemonInfoNav('evolutionBtn'); renderPokemonEvolutionChainContainer()" id="evolutionBtn"><b>Evolution</b></button>
+            <button class="info-nav-btn darkgray" onclick="pokemonInfoNav('movesBtn'); renderPokemonMovesContainer()" id="movesBtn"><b>Moves</b></button>
         </nav>
         
         <section class="about-div">
@@ -93,7 +94,43 @@
             </div>
         </section>
         <section class="evolution-div d-none">
-
+            <div>
+                <p>Evolution Chain</p> 
+                <div>
+                    <div>
+                        <img id="pokemonImgStage1" src="" alt="">
+                        <p id="pokemonNameStage1"></p>
+                    </div>
+                    <div>
+                        <img src="img/arrow-right.svg" alt="arrow-right">
+                        <span class="pokemon-lvl-span">
+                            <p>Lvl</p>
+                            <p id="lvlForStage2"></p>
+                        </span>
+                    </div>
+                    <div>
+                        <img id="pokemonNameStage2" src="" alt="">
+                        <p id="pokemonNameStage2"></p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <img id="pokemonImgStage2.2" src="" alt="">
+                        <p id="pokemonNameStage2.2"></p>
+                    </div>
+                    <div>
+                        <img src="img/arrow-right.svg" alt="arrow-right">
+                        <span class="pokemon-lvl-span">
+                            <p>Lvl</p>
+                            <p id="lvlForStage3"></p>
+                        </span>
+                    </div>
+                    <div>
+                        <img id="pokemonNameStage3" src="" alt="">
+                        <p id="pokemonNameStage3"></p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="moves-div d-none">
